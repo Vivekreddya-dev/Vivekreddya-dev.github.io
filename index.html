@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivek Reddy A - Personal Website</title>
+    <title>Vivek Reddya - Personal Website</title>
     <style>
         * {
             margin: 0;
@@ -17,9 +17,6 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 20px;
         }
 
@@ -27,10 +24,15 @@
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
+            margin: 0 auto;
             padding: 60px 40px;
+        }
+
+        .header {
             text-align: center;
+            margin-bottom: 50px;
         }
 
         .profile-photo {
@@ -73,12 +75,23 @@
             margin-bottom: 15px;
         }
 
+        .section {
+            margin: 40px 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2d3748;
+            font-size: 1.8em;
+        }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
-            margin: 30px 0;
+            margin: 20px 0;
         }
 
         .skill {
@@ -89,11 +102,127 @@
             font-size: 0.9em;
         }
 
+        .experience-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .exp-btn {
+            padding: 15px 30px;
+            background: #2d3748;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .exp-btn:hover {
+            background: #1a202c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .exp-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .experience-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 30px;
+            background: #f7fafc;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .experience-content.active {
+            max-height: 2000px;
+            padding: 30px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .job {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .job h3 {
+            color: #2d3748;
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .job .company {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .job .duration {
+            color: #718096;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .job ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .job ul li {
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+
+        .learning-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .learning-section h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .learning-section p {
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
         .social-links {
             display: flex;
             gap: 20px;
             justify-content: center;
             margin-top: 40px;
+            flex-wrap: wrap;
         }
 
         .social-links a {
@@ -115,6 +244,7 @@
             margin-top: 40px;
             padding-top: 30px;
             border-top: 2px solid #e2e8f0;
+            text-align: center;
         }
 
         .contact a {
@@ -136,49 +266,169 @@
                 font-size: 2em;
             }
 
-            .social-links {
+            .experience-buttons {
                 flex-direction: column;
+            }
+
+            .exp-btn {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="profile-photo">VR</div>
-        
-        <h1>Vivek Reddy A</h1>
-        <p class="tagline">Senior Software Engineer | Azure Cloud Solutions | Transitioning to Platform Engineering & AI </p>
+        <div class="header">
+            <div class="profile-photo">VR</div>
+            <h1>Vivek Reddya</h1>
+            <p class="tagline">Senior Software Engineer | Azure Cloud Solutions | Transitioning to Platform Engineering & AI</p>
+        </div>
         
         <div class="about">
             <h2>About Me</h2>
             <p>
-                Full-stack Senior Software Engineer with 9+ years of experience building scalable Azure cloud solutions. I specialize in integration architecture using Azure APIM, Logic Apps, and Function Apps. Currently at Jewelers Mutual Group, I lead strategic integration initiatives while actively expanding into platform engineering and AI-driven automation. Passionate about leveraging modern cloud technologies and AI tools to solve complex business challenges and drive operational excellence.
+                Full-stack Senior Software Engineer with 9+ years of experience building scalable Azure cloud solutions. 
+                I specialize in integration architecture using Azure APIM, Logic Apps, and Function Apps. Currently at 
+                Jewelers Mutual Group, I lead strategic integration initiatives while actively expanding into platform 
+                engineering and AI-driven automation.
             </p>
             <p style="margin-top: 15px;">
-                I'm always excited to collaborate on interesting projects and connect with 
-                like-minded individuals. Feel free to reach out!
+                Passionate about leveraging modern cloud technologies and AI tools to solve complex business challenges 
+                and drive operational excellence. Let's connect to explore collaboration opportunities!
             </p>
         </div>
 
-        <h2 style="margin-bottom: 20px; color: #2d3748;">Skills & Interests</h2>
-        <div class="skills">
-            <span class="skill">Web Development</span>          
-            <span class="skill">Azure Cloud Development</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">Python</span>
-            <span class="skill">UI/UX Design</span>
-            <span class="skill">Problem Solving</span>
-            <span class="skill">Team Collaboration</span>
+        <div class="section">
+            <h2>Skills & Expertise</h2>
+            <div class="skills">
+                <span class="skill">Azure APIM</span>
+                <span class="skill">Logic Apps</span>
+                <span class="skill">Function Apps</span>
+                <span class="skill">Azure DevOps</span>
+                <span class="skill">Full-Stack Development</span>
+                <span class="skill">API Design</span>
+                <span class="skill">C# / .NET</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Cloud Architecture</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="experience-buttons">
+                <button class="exp-btn" onclick="toggleExperience('current')">Current Role</button>
+                <button class="exp-btn" onclick="toggleExperience('previous')">Previous Role</button>
+                <button class="exp-btn" onclick="toggleExperience('earlier')">Earlier Experience</button>
+            </div>
+
+            <div id="current" class="experience-content">
+                <div class="job">
+                    <h3>Senior Software Engineer</h3>
+                    <div class="company">Jewelers Mutual Group</div>
+                    <div class="duration">2020 - Present | De Pere, WI</div>
+                    <p>
+                        Leading strategic integration initiatives and partner onboarding processes. Architecting scalable 
+                        Azure-based solutions using APIM, Logic Apps, and Function Apps to modernize enterprise systems.
+                    </p>
+                    <ul>
+                        <li>Lead partner integration platform development using Azure APIM and Logic Apps</li>
+                        <li>Design and implement RESTful APIs for seamless third-party integrations</li>
+                        <li>Drive DevOps best practices and CI/CD pipeline optimization</li>
+                        <li>Collaborate with cross-functional teams to deliver enterprise solutions</li>
+                        <li>Mentor junior developers and conduct code reviews</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="previous" class="experience-content">
+                <div class="job">
+                    <h3>Software Engineer</h3>
+                    <div class="company">Previous Company Name</div>
+                    <div class="duration">2017 - 2020 | Location</div>
+                    <p>
+                        Developed full-stack applications and implemented cloud migration strategies. Focused on building 
+                        scalable web applications and improving system performance.
+                    </p>
+                    <ul>
+                        <li>Built responsive web applications using React and .NET</li>
+                        <li>Migrated legacy systems to Azure cloud infrastructure</li>
+                        <li>Implemented automated testing and deployment pipelines</li>
+                        <li>Collaborated with product teams to define technical requirements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="earlier" class="experience-content">
+                <div class="job">
+                    <h3>Junior Software Developer</h3>
+                    <div class="company">Earlier Company Name</div>
+                    <div class="duration">2015 - 2017 | Location</div>
+                    <p>
+                        Started my career building web applications and learning cloud technologies. Contributed to 
+                        multiple projects across different business domains.
+                    </p>
+                    <ul>
+                        <li>Developed web applications using ASP.NET and JavaScript</li>
+                        <li>Participated in Agile development teams</li>
+                        <li>Learned Azure fundamentals and cloud development</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h3>Software Development Intern</h3>
+                    <div class="company">Internship Company</div>
+                    <div class="duration">Summer 2014 | Location</div>
+                    <p>
+                        Gained hands-on experience in software development and worked on internal tools.
+                    </p>
+                    <ul>
+                        <li>Assisted in developing internal management tools</li>
+                        <li>Learned software development best practices</li>
+                        <li>Collaborated with senior developers on various projects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="learning-section">
+            <h3>🚀 Currently Learning & Exploring</h3>
+            <p>
+                <strong>Platform Engineering:</strong> Diving deep into infrastructure as code, Kubernetes orchestration, 
+                GitOps practices, and building internal developer platforms that improve team productivity and deployment velocity.
+            </p>
+            <p style="margin-top: 15px;">
+                <strong>AI & Machine Learning:</strong> Exploring Azure AI services, OpenAI API integration, prompt engineering, 
+                and building intelligent automation solutions. Experimenting with LangChain, vector databases, and AI-powered 
+                workflow automation to enhance enterprise applications.
+            </p>
         </div>
 
         <div class="social-links">
             <a href="https://github.com/vivekreddya-dev" target="_blank">GitHub</a>
-            <a href="www.linkedin.com/in/vivekreddya" target="_blank">LinkedIn</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
         </div>
 
         <div class="contact">
-            <p>Get in touch: <a href="mailto:your.email@example.com">vivek.anug@gmail.com</a></p>
+            <p>Get in touch: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
         </div>
     </div>
+
+    <script>
+        function toggleExperience(section) {
+            const content = document.getElementById(section);
+            const button = event.target;
+            
+            // Toggle the clicked section
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                button.classList.remove('active');
+            } else {
+                content.classList.add('active');
+                button.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
